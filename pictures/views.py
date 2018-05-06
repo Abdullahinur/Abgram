@@ -7,7 +7,8 @@ from django.shortcuts import render
 
 def home(request):
     date = dt.date.today()
-    return render(request, 'index.html', {"date": date})
+    slogan = 'Just keep uploading...'
+    return render(request, 'index.html', {"date": date, "slogan": slogan})
 
 
 def detail(request, image):
