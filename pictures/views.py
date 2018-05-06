@@ -1,13 +1,13 @@
 from django.http import HttpResponse
 import datetime as dt
-from .models import Image, Category, Location
+from django.shortcuts import render
+
 # Create your views here.
 
 
 def home(request):
     date = dt.date.today()
-    latest_photos_list = Image.objects[:5]
-    return HttpResponse(html)
+    return render(request, 'index.html', {"date": date})
 
 
 def detail(request, image):
