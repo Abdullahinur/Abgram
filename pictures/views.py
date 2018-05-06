@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 import datetime as dt
 from django.shortcuts import render
 from .models import Category, Image, Location
@@ -12,6 +12,9 @@ def home(request):
     return render(request, 'index.html', {"date": date, "slogan": slogan, "pictures": pictures})
 
 
-def detail(request, image):
-    response = "You're Looking at the image %s."
-    return HttpResponse(response % image)
+def image(request, image_name):
+    try:
+        image = Image.objects.get(name=image_name)
+    except DoesNotExist:
+        raise Http404()
+    return render(request, 'images/image.html', {"image": image})
