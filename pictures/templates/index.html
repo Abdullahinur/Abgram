@@ -2,6 +2,7 @@
 
 {% block content %}
 {{ block.super}}
+{% include "search.html" %}
 <!-- Banner -->
   <section id="banner">
     <h2><strong>Abgram</strong> A gallery of Wonderful Images</h2>
@@ -15,7 +16,7 @@
   <div class="row">
     <!-- displaying  -->
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-      <h2 class="text-center"> {{ picture.image_name }} </h2>
+      <h2 class="text-center"> {{ picture.categories }} </h2>
     </div>
   <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
     <img src="{{picture.image.url}}" class="img-responsive" alt="Image">
