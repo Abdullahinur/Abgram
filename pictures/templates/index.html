@@ -2,7 +2,11 @@
 
 {% block content %}
 {{ block.super}}
-
+<!-- Banner -->
+  <section id="banner">
+    <h2><strong>Abgram</strong> A gallery of Wonderful Images</h2>
+    <p>Brought to you by Abdullahinur</p>
+  </section>
 <div class="container">
 
   <!-- Looping through pictures   -->
@@ -20,7 +24,7 @@
 
   {% empty %}
   <div class="row">
-    <h2 class="text-center">There No New Images</h2>
+    <h2 class="text-center">There are No New Images</h2>
   </div>
   {% endfor %}
 
