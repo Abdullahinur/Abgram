@@ -5,11 +5,11 @@
 
 <div class="container">
 
-  <!-- Looping through news   -->
+  <!-- Looping through pictures   -->
   {% for picture in pictures %}
 
   <div class="row">
-    <!-- displaying News articles -->
+    <!-- displaying  -->
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
       <h2 class="text-center"> {{ picture.image_name }} </h2>
     </div>
@@ -20,10 +20,9 @@
 
   {% empty %}
   <div class="row">
-    <h2 class="text-center">There No News Images</h2>
+    <h2 class="text-center">There No New Images</h2>
   </div>
   {% endfor %}
 
 </div>
-
 {%endblock%}
