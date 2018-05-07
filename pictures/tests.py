@@ -25,6 +25,16 @@ class ImageTestClass(TestCase):
         images = Image.objects.all()
         self.assertTrue(len(images) == 0)
 
+    def test_update_image(self):
+        self.image.save_images()
+        self.image.update_image('abdullahinur', 'new_description', 'new_image_url')
+        self.image.save_images()
+        updated_name = self.image.image_name
+        update_description = self.image.image_description
+        updated_url = self.image.image
+        self.assertTrue(updated_name == 'abdullahinir' and update_description ==
+                        'new_description', updated_url == 'new_image_url')
+
 
 class LocationTestClass(TestCase):
 

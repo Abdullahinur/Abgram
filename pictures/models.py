@@ -44,7 +44,13 @@ class Image(models.Model):
     def delete_images(self):
         self.delete()
 
+    def update_image(self, new_name, new_description, new_image):
+        self.image_name = new_name
+        self.image_description = new_description
+        self.image = new_image
+        self.save()
+
     @classmethod
     def get_images(cls):
-        retrieved_images = Image.objects.all()
+        retrieved_images = cls.objects.all()
         return retrieved_images
